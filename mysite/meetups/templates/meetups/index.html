@@ -1,23 +1,26 @@
+{% extends 'meetups/base/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="{% static 'meetups/styles/base.css' %}"> -->
-  <title>Document</title>
-</head>
-<body>
-    <h1>all meetups</h1>
-      {% for meetup in meetups %}
-        <li>
-          <h2">{{ meetup.title }}</h2>
-          <p>{{ meetup.description }}</p>
-          <p>Date: {{ meetup.date }}</p>
-          <p>Location: {{ meetup.location }}</p>
-        </li>
-      {% endfor %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'meetups/styles/all-meetups.css' %}">
+{% endblock %}
+{% block title %} All Meetups {% endblock %}
 
-</body>
-</html>
+{% block main_heading %}
+We got great meetups coming up!
+{% endblock %}
+
+{% block sub_heading %}
+<p>Find the one that best suits your needs!</p>
+{% endblock %}
+
+{% block body %}
+<section>
+  <h2>Upcoming Meetups</h2>
+  <ol>
+    {% for meetup in meetups %}
+      {% include 'meetups/includes/meetup-item.html' with title=meetup.title date=meetup.date location=meetup.location image=meetup.image.url %}
+    {% endfor %}
+  </ol>
+</section>
+{% endblock %}
