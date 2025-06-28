@@ -1,0 +1,246 @@
+section {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2.25rem;
+  color: var(--gray-900);
+  margin-bottom: var(--space-xl);
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-sm);
+}
+
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.meetup-item {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid var(--gray-200);
+  position: relative;
+}
+
+.meetup-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+}
+
+.meetup-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-light);
+}
+
+.meetup-item article {
+  padding: var(--space-lg);
+}
+
+.meetup-summary {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.meetup-image {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.meetup-image img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.meetup-item:hover .meetup-image img {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.meetup-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.meetup-details h3 {
+  color: var(--gray-900);
+  margin: 0 0 var(--space-sm) 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.meetup-details p {
+  color: var(--gray-600);
+  margin-bottom: var(--space-xs);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.meetup-details p:last-child {
+  margin-bottom: 0;
+}
+
+.meetup-details strong {
+  color: var(--gray-700);
+  font-weight: 500;
+}
+
+.meetup-meta {
+  display: flex;
+  gap: var(--space-lg);
+  margin-top: var(--space-sm);
+}
+
+.meetup-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--gray-600);
+  font-size: 0.875rem;
+}
+
+.meetup-meta-item::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  opacity: 0.7;
+}
+
+.meetup-meta-item.date::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'/%3E%3C/svg%3E");
+}
+
+.meetup-meta-item.location::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z'/%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 11a3 3 0 11-6 0 3 3 0 016 0z'/%3E%3C/svg%3E");
+}
+
+.meetup-actions {
+  text-align: right;
+  border-top: 1px solid var(--gray-100);
+  padding-top: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.meetup-actions .btn {
+  background: var(--gradient-primary);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.meetup-actions .btn::after {
+  content: '→';
+  transition: transform 0.2s ease;
+}
+
+.meetup-actions .btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.meetup-actions .btn:hover::after {
+  transform: translateX(2px);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: var(--space-2xl);
+  color: var(--gray-500);
+}
+
+.empty-state h3 {
+  color: var(--gray-600);
+  margin-bottom: var(--space-sm);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  section {
+    max-width: 100%;
+  }
+
+  .meetup-summary {
+    flex-direction: column;
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  .meetup-image {
+    align-self: center;
+  }
+
+  .meetup-image img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .meetup-actions {
+    text-align: center;
+  }
+
+  .meetup-meta {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .meetup-item article {
+    padding: var(--space-md);
+  }
+
+  .meetup-details h3 {
+    font-size: 1.25rem;
+  }
+
+  .meetup-image img {
+    width: 80px;
+    height: 80px;
+  }
+
+  section h2 {
+    font-size: 1.875rem;
+  }
+}

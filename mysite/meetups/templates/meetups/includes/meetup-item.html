@@ -1,0 +1,24 @@
+<li class="meetup-item">
+  <article>
+    <div class="meetup-summary">
+      <div class="meetup-image">
+        <img src="{{ image }}" alt="{{ title }}">
+      </div>
+      <div class="meetup-details">
+        <h3>{{ title }}</h3>
+        <p>{{ description }}</p>
+        <div class="meetup-meta">
+          <div class="meetup-meta-item date">
+            <strong>{{ date }}</strong>
+          </div>
+          <div class="meetup-meta-item location">
+            <strong>{{ location }}</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="meetup-actions">
+      <a href="{% url 'meetup_detail' meetup.slug %}" class="btn">More Details</a>
+    </div>
+  </article>
+</li>
