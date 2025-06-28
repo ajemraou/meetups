@@ -8,24 +8,6 @@ def index(request):
     """
     Render the index page for the meetups app.
     """
-    # meetups_object = {
-    #     'meetups': [
-    #         {
-    #             'title': 'Django Meetup',
-    #             'description': 'A meetup for Django enthusiasts.',
-    #             'date': '2023-10-01',
-    #             'location': 'Online',
-    #             'slug': 'django-meetup',
-    #         },
-    #         {
-    #             'title': 'Python Meetup',
-    #             'description': 'A meetup for Python developers.',
-    #             'date': '2023-10-15',
-    #             'location': 'Online',
-    #             'slug': 'python-meetup',
-    #         },
-    #     ]
-    # }
     meetups = Meetup.objects.all()
     return render(request, 'meetups/index.html', {'meetups': meetups})
 
