@@ -18,14 +18,15 @@
   <img id="main-image" src="{{ meetup.image.url }}" alt="{{ meetup_title }}">
   <section id="location">
     <h2>Meetup Location</h2>
-    <address>This meetup takes place in <span>{{ meetup.location.name }}</span> ({{ meetup.location.address }}).
-    </address>
+<address>This meetup takes place in&nbsp;<span>{{ meetup.location.name }}&nbsp;</span> ({{ meetup.location.address }}).</address>
+
   </section>
-  <section>
+  <section class="about-section">
     <h2>What's This Meetup About?</h2>
     <p>{{ meetup.description }}</p>
     <footer>
-      <p>Need more details? Please <a href="mailto:{{ meetup.organizer_email }}">contact the organizer</a> (but don't spam us)</p>
+      <p>Need more details? Please <a href="mailto:{{ meetup.organizer_email }}">contact the organizer</a> (but don't
+        spam us)</p>
     </footer>
   </section>
   <section id="registration">
